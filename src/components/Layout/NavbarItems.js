@@ -22,12 +22,6 @@ const NavbarItems  = [
       cName: 'nav-text'
     },
     {
-      title: 'Team',
-      path: '/team',
-      icon: <IoIcons.IoMdPeople />,
-      cName: 'nav-text'
-    },
-    {
       title: 'Contact',
       path: '/contact',
       icon: <FaIcons.FaEnvelopeOpenText />,
