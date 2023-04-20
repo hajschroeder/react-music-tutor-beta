@@ -1,6 +1,9 @@
+import Card from "../UI/Card";
 const Home = () => {
   return (
-  <h2>Home Placeholder</h2>
+  <Card>
+    <h2>Home Placeholder</h2>
+  </Card>
   )
 }
 
