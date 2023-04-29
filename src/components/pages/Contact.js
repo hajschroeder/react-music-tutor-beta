@@ -1,4 +1,5 @@
 import Card from "../UI/Card"
+import Modal from "../UI/Modal";
 import * as FaIcons from 'react-icons/fa';
 import * as MdIcons from 'react-icons/md';
 import * as RxIcons from 'react-icons/rx'
@@ -8,15 +9,28 @@ const Contact = () => {
 
 
   const [isCopiedState, setIsCopiedState] = useState(false);
+  const [modalState, setModalState] = useState();
   const email = 'email@todayisfun.com'
   const copyHandler = (copyEvent) => {
     copyEvent.preventDefault();
-    return (
-      alert('copied')
-    )
-    
+          setModalState({
+            title: 'Success',
+            message: 'Email Copied to Clipboard'
+          });
+        return;
+      }
+      const modalHandler = () => {
+        setModalState(null)
   }
   return (
+    <div>
+      {modalState && (
+        <Modal 
+          title={modalState.title}
+          message={modalState.message}
+          onModalHandler={modalHandler}
+        />
+      )}
     <div>
     <h2>Contact</h2>
       <Card>
@@ -37,6 +51,7 @@ const Contact = () => {
           </li>
         </ul>
       </Card>
+    </div>
     </div>
     )
 }
